@@ -32,4 +32,29 @@ const getRandomIntInclusive = (min, max) => {
   return min + randomNumber;
 };
 
-console.log(getRandomIntInclusive(5, 7));
+/**
+ * Calculate the game result based on the values of the parameters
+ * and print the result to the console.
+ * 
+ * @param {number} tries 
+ * @param {number} randomNumber 
+ * @param {number} guess 
+ * @param {number} triesMade 
+ */
+const game = (tries, randomNumber, guess, triesMade) => {
+  if (guess === randomNumber) {
+    console.log(`WON by ${triesMade} tries`);
+    process.exit();
+  }
+
+  if (tries <= 0) {
+    console.log(`You have lost the game! The number was ${randomNumber}.`);
+    process.exit();
+  }
+
+  if (guess > randomNumber) {
+    console.log("TOO HIGH");
+  } else {
+    console.log("TOO LOW");
+  }
+};
