@@ -60,7 +60,7 @@ const getRandomIntInclusive = (min, max) => {
  */
 const game = (triesLeft, randomNumber, guess, triesMade) => {
   if (guess === randomNumber) {
-    console.log(`WON by ${triesMade} tries`);
+    console.log(`WON by ${triesMade} ${triesMade > 1 ? 'tries' : 'try'}.`);
     process.exit();
   }
 
@@ -70,9 +70,9 @@ const game = (triesLeft, randomNumber, guess, triesMade) => {
   }
 
   if (guess > randomNumber) {
-    console.log("TOO HIGH");
+    console.log("TOO HIGH!");
   } else {
-    console.log("TOO LOW");
+    console.log("TOO LOW!");
   }
 };
 
