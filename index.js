@@ -76,8 +76,6 @@ const game = (triesLeft, randomNumber, guess, triesMade) => {
   }
 };
 
-const queryNumOfTries = `Number of tries (must be positive): `;
-
 /**
  * Runs the game.
  */
