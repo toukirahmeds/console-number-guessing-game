@@ -53,18 +53,18 @@ const getRandomIntInclusive = (min, max) => {
  * Calculate the game result based on the values of the parameters
  * and print the result to the console.
  * 
- * @param {number} tries 
+ * @param {number} triesLeft
  * @param {number} randomNumber 
  * @param {number} guess 
  * @param {number} triesMade 
  */
-const game = (tries, randomNumber, guess, triesMade) => {
+const game = (triesLeft, randomNumber, guess, triesMade) => {
   if (guess === randomNumber) {
     console.log(`WON by ${triesMade} tries`);
     process.exit();
   }
 
-  if (tries <= 0) {
+  if (triesLeft <= 0) {
     console.log(`You have lost the game! The number was ${randomNumber}.`);
     process.exit();
   }
@@ -94,6 +94,14 @@ const main = () => {
 
   while (max <= min) {
     max = getMaxNumber(min);
+  }
+
+  const randomNumber = getRandomIntInclusive(min, max);
+
+  for (let i = numOfTries; i > 0; i--) {
+    const userGuess = getUserIntInput(`Guess the number (${min} to ${max}, tries left: ${i}): `);
+    const triesMade = numOfTries - i + 1;
+    game(i - 1, randomNumber, userGuess, triesMade);
   }
 };
 
