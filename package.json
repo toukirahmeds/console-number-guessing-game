@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/toukirahmeds/console-number-guessing-game/issues"
   },
-  "homepage": "https://github.com/toukirahmeds/console-number-guessing-game#readme"
+  "homepage": "https://github.com/toukirahmeds/console-number-guessing-game#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
