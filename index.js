@@ -24,7 +24,16 @@ const getUserIntInput = printStr => {
  * @returns {number}
  */
 const getNumOfTries = () =>
-  getUserIntInput(`Number of tries (must be more than 0): `)
+  getUserIntInput(`Number of tries (must be more than 0): `);
+
+/**
+ * Get the maximum number
+ * 
+ * @param {number} min 
+ * @returns {number}
+ */
+const getMaxNumber = (min) =>
+  getUserIntInput(`Maximum Number (Must be more than ${min}): `);
 
 /**
  * Get a random integer in the inclusive range of {min} to {max}
@@ -77,6 +86,14 @@ const main = () => {
   
   while (numOfTries <= 0) {
     numOfTries = getNumOfTries();
+  }
+
+  const min = getUserIntInput("Minimum Number: ");
+
+  let max = getMaxNumber(min);
+
+  while (max <= min) {
+    max = getMaxNumber(min);
   }
 };
 
