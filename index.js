@@ -17,3 +17,19 @@ const getUserIntInput = printStr => {
 
   return intInput;
 };
+
+/**
+ * Get a random integer in the inclusive range of {min} to {max}
+ * 
+ * @param {number} min 
+ * @param {number} max 
+ * @returns {number}
+ */
+const getRandomIntInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  const randomNumber = Math.floor(Math.random() * (max - min + 1));
+  return min + randomNumber;
+};
+
+console.log(getRandomIntInclusive(5, 7));
