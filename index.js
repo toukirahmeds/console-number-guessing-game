@@ -19,6 +19,14 @@ const getUserIntInput = printStr => {
 };
 
 /**
+ * Get the number of tries
+ * 
+ * @returns {number}
+ */
+const getNumOfTries = () =>
+  getUserIntInput(`Number of tries (must be more than 0): `)
+
+/**
  * Get a random integer in the inclusive range of {min} to {max}
  * 
  * @param {number} min 
@@ -58,3 +66,18 @@ const game = (tries, randomNumber, guess, triesMade) => {
     console.log("TOO LOW");
   }
 };
+
+const queryNumOfTries = `Number of tries (must be positive): `;
+
+/**
+ * Runs the game.
+ */
+const main = () => {
+  let numOfTries = getNumOfTries();
+  
+  while (numOfTries <= 0) {
+    numOfTries = getNumOfTries();
+  }
+};
+
+main();
