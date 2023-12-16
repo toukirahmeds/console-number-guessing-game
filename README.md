@@ -5,5 +5,5 @@ A simple console game to guess randomly generated integer in the range.
 - NodeJs
 
 ## How to run the project
-1. Install [Nodejs](https://nodejs.org/) (If not installed).
+1. Install [Nodejs](https://nodejs.org/)(If not already installed).
 2. Run command `npm install`.
