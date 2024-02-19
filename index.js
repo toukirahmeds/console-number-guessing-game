@@ -40,6 +40,32 @@ const getUserIntInput = async (printStr) => {
   return userIntInput;
 }
 
+/**
+ * Calculates the result of the current step.
+ * 
+ * @param {Number} triesLeft 
+ * @param {Number} randomNumber 
+ * @param {Number} guess 
+ * @param {Number} triesMade 
+ */
+const game = (triesLeft, randomNumber, guess, triesMade) => {
+  if (guess === randomNumber) {
+    console.log(`Won the game with ${triesMade} ${triesMade > 1 ? 'tries' : 'try'}.`);
+    process.exit(0);
+  }
+
+  if (triesLeft <= 0) {
+    console.log(`You have lost the game! The number was ${randomNumber}.`);
+    process.exit(0);
+  }
+
+  if (guess > randomNumber) {
+    console.log("TOO HIGH");
+  } else {
+    console.log("TOO LOW");
+  }
+};
+
 const main = async () => {
   rl.close();
 }
