@@ -1,3 +1,10 @@
+const readline = require("readline/promises");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 /**
  * Returns a random integer in the inclusive range
  * of {min} to {max}
@@ -14,3 +21,27 @@ const getRandomInt = (min, max) => {
 
   return randomNumber + min;
 };
+
+/**
+ * Prompts the user to input an integer.
+ * 
+ * @param {String} printStr 
+ * @returns {Number}
+ */
+const getUserIntInput = async (printStr) => {
+  const userInput = await rl.question(printStr);
+  const userIntInput = parseInt(userInput);
+
+  if (isNaN(userIntInput) || userIntInput !== parseFloat(userInput)) {
+    console.log("Provide a valid whole number!");
+    return getUserIntInput(printStr);
+  }
+
+  return userIntInput;
+}
+
+const main = async () => {
+  rl.close();
+}
+
+main();
