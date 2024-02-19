@@ -1,0 +1,25 @@
+{
+  "name": "console-number-guessing-game",
+  "version": "1.0.0",
+  "description": "A simple console game to guess random number.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toukirahmeds/console-number-guessing-game.git"
+  },
+  "keywords": [
+    "console",
+    "random",
+    "number",
+    "guess"
+  ],
+  "author": "toukirahmeds@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toukirahmeds/console-number-guessing-game/issues"
+  },
+  "homepage": "https://github.com/toukirahmeds/console-number-guessing-game#readme"
+}
