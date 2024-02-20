@@ -26,7 +26,7 @@ const getRandomInt = (min, max) => {
  * Prompts the user to input an integer.
  * 
  * @param {String} printStr 
- * @returns {Number}
+ * @returns {Promise<Number>}
  */
 const getUserIntInput = async (printStr) => {
   const userInput = await rl.question(printStr);
@@ -66,7 +66,36 @@ const game = (triesLeft, randomNumber, guess, triesMade) => {
   }
 };
 
+/**
+ * Starts the game.
+ */
 const main = async () => {
+  const min = await getUserIntInput("Minimum whole number: ");
+  const maxPrompt = `Maximum whole number (more than ${min}): `;
+  let max = await getUserIntInput(maxPrompt);
+
+  while (max <= min) {
+    max = await getUserIntInput(maxPrompt);
+  }
+
+  const numOfTriesPrompt = "Number of tries (more than 0 and a whole number): ";
+  let numOfTries = await getUserIntInput(numOfTriesPrompt);
+
+  while (numOfTries <= 0) {
+    numOfTries = await getUserIntInput(numOfTriesPrompt);
+  }
+
+  const randomNumber = getRandomInt(min, max);
+  
+  for (let triesLeft = numOfTries - 1; triesLeft >= 0; triesLeft--) {
+    const triesMade = numOfTries - triesLeft;
+    const userGuess = await getUserIntInput(
+      `Guess the whole number (${min} to ${max}) (Tries Left: ${triesLeft + 1}): `
+    );
+
+    game(triesLeft, randomNumber, userGuess, triesMade);
+  }
+
   rl.close();
 }
 
