@@ -7,3 +7,4 @@ A simple console game to guess random whole number.
 ## How to run the project
 - Install [Node.js](https://nodejs.org/) (If not already installed.)
 - Run command `npm install` to install all the dependencies.
+- Run command `npm start` to start the project.
